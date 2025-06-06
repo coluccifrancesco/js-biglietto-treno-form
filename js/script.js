@@ -17,7 +17,7 @@ let userYears = '';
 
 document.getElementById('submit').addEventListener('click', function(){
     
-    userKm = document.getElementById('km').value;
+    userKm = document.getElementById('km').value;     // preferisco dare valore alle variabili nella funzione per portabilità
     console.log("L'utente percorrerà: " + userKm + "km");
     
     userYears = document.getElementById('years').value;
@@ -41,15 +41,31 @@ document.getElementById('submit').addEventListener('click', function(){
 
     }
 
+
+    // MILESTONE 2:
+    // Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente 
+    // potrà inserire i dati e visualizzare il calcolo finale con il prezzo. Il recap dei dati e l'output del prezzo finale, 
+    // andranno quindi stampati in pagina.
+
+    document.getElementById('result').style.display = 'block'
+
+    let userName = document.getElementById('name').value
+    let userSurname = document.getElementById('surname').value
+
+    document.getElementById('user-name').textContent = userName;
+    document.getElementById('user-surname').textContent = userSurname;
+    document.getElementById('user-km').textContent = userKm;
+    document.getElementById('user-age').textContent = userYears;
+    document.getElementById('user-cost').textContent = userCost;
+
+    console.log("Il nome dell'utente è: " + userName)
+    console.log("Il cognome dell'utente è: " + userSurname)
+
 })
 
-
-// MILESTONE 2:
-// Solo una volta che il milestone 1 sarà completo e funzionante allora realizzeremo un form in pagina in cui l’utente 
-// potrà inserire i dati e visualizzare il calcolo finale con il prezzo. Il recap dei dati e l'output del prezzo finale, 
-// andranno quindi stampati in pagina (il prezzo dovrà essere formattato con massimo due decimali, 
-// per indicare i centesimi sul prezzo). Questo richiederà un minimo di ricerca.
-
+document.getElementById('reload').addEventListener('click', function(){  // do valore al bottone annulla 
+    location.reload()
+})
 
 
 // MILESTONE 3:

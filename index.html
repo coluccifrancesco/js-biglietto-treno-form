@@ -8,18 +8,25 @@
 </head>
 <body style="display: flex; flex-direction: column; width: 25%;">
     
+    <label for="name">Nome del passeggero</label>
+    <input id="name" type="text">
+    <label for="surname">Cognome del passeggero</label>
+    <input id="surname" type="text">
+
     <label for="km">Quanti km percorrerai?</label>   <!-- è un'etichetta che spiegano l'utilità di ogni input -->
     <input id="km" type="number" min="1" required>   <!-- value è il contenuto dell'input, in JS può essere letto o impostato-->
     <label for="years">Quanti anni hai?</label>
     <input id="years" type="number" min="1" max="120" required>
 
     <button id="submit">Invio</button>
+    <button id="reload">Annulla</button>
 
-
-    <div>  <!-- risultato -->
-        <p>
-            risultato <span id="result"></span>
-        </p>
+    <div id="result" style="display: none;">
+        <h2 id="user-name"></h2>
+        <h2 id="user-surname"></h2>
+        <p id="user-km"></p>
+        <p id="user-age"></p>
+        <h3 id="user-cost"></h3>
     </div>
 
     <script src="./js/script.js"></script>
