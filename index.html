@@ -6,10 +6,21 @@
     <title>Biglietto del Treno</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
-<body>
+<body style="display: flex; flex-direction: column; width: 25%;">
     
-    
+    <label for="km">Quanti km percorrerai?</label>   <!-- è un'etichetta che spiegano l'utilità di ogni input -->
+    <input id="km" type="number" min="1" required>   <!-- value è il contenuto dell'input, in JS può essere letto o impostato-->
+    <label for="years">Quanti anni hai?</label>
+    <input id="years" type="number" min="1" max="120" required>
 
+    <button id="submit">Invio</button>
+
+
+    <div>  <!-- risultato -->
+        <p>
+            risultato <span id="result"></span>
+        </p>
+    </div>
 
     <script src="./js/script.js"></script>
 </body>
