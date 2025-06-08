@@ -18,11 +18,11 @@ document.getElementById('submit').addEventListener('click', function(){
 
     // Calcolo il costo per qualità della classe
     let userClass = document.getElementById('class').value; 
-    let costAfterClass = costByClass(ticketCost, userClass);
+    let costAfterClass = costByClass(ticketCost, userClass).toFixed(2);
 
     // Calcolo il costo in base a viaggio diretto o andata e ritorno
     let userTravelType = document.querySelector('input[name="travel-type"]:checked').value; 
-    let costDirectOrRound = costByReturnOrNot(userTravelType, costAfterClass);
+    let costDirectOrRound = costByReturnOrNot(userTravelType, costAfterClass).toFixed(2);
 
     // L'utente inserisce le date
     let departureInfo = document.getElementById('departure-datetime').value;
@@ -103,6 +103,7 @@ document.getElementById('and-home').addEventListener('change', function(){
     console.log("L'utente ha scelto il viaggio con ritorno")
 })
 
+// Rendo visibile la scelta della data di ritorno
 document.getElementById('direct').addEventListener('change', function(){
     document.getElementById('return-datetime').style.display = 'none'
     document.getElementById('label-ar').style.display = 'none'

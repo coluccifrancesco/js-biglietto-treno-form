@@ -1,0 +1,17 @@
+*{
+    font-size: 16px;
+}
+
+:root{
+    --text-color: #d0f7fc;
+    --background-color: #010a0c;
+    --primary-color: #85e7f8;
+    --secondary-color: #0a0fa6;
+    --accent-color: #5b36f3;
+
+    --text-color-2: #071117;
+    --background-color-2: #e8f1f8;
+    --primary-color-2: #1a496b;
+    --secondary-color-2: #7bb9e5;
+    --accent-color-2: #228fdd;
+}
