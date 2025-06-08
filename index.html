@@ -6,27 +6,72 @@
     <title>Biglietto del Treno</title>
     <link rel="stylesheet" href="./style/style.css">
 </head>
-<body style="display: flex; flex-direction: column; width: 25%;">
+
+<body style="display: flex; flex-direction: column; width: 20%;">
     
-    <label for="name">Nome del passeggero</label>
-    <input id="name" type="text">
-    <label for="surname">Cognome del passeggero</label>
-    <input id="surname" type="text">
+    <form>
+        <label for="name">Nome del passeggero</label>
+        <input id="name" type="text">
+        <label for="surname">Cognome del passeggero</label>
+        <input id="surname" type="text">
 
-    <label for="km">Quanti km percorrerai?</label>   <!-- è un'etichetta che spiegano l'utilità di ogni input -->
-    <input id="km" type="number" min="1" required>   <!-- value è il contenuto dell'input, in JS può essere letto o impostato-->
-    <label for="years">Quanti anni hai?</label>
-    <input id="years" type="number" min="1" max="120" required>
+        <label for="km">Quanti km percorrerai?</label>   <!-- è un'etichetta che spiegano l'utilità di ogni input -->
+        <input id="km" type="number" min="1" required>   <!-- value è il contenuto dell'input, in JS può essere letto o impostato-->
+        <label for="years">Quanti anni hai?</label>
+        <input id="years" type="number" min="1" max="120" required>
 
-    <button id="submit">Invio</button>
-    <button id="reload">Annulla</button>
+        <!-- andata o ritorno input type radio-->
+        <ul style="list-style: none;">
+            <li>
+                <label for="direct">Andata</label>
+                <input id="direct" type="radio" name="travel-type" value="diretto">
+            </li>
 
+            <li>
+                <label for="and-home">Andata e ritorno</label>
+                <input id="and-home" type="radio" name="travel-type" value="andata e ritorno">
+            </li>
+        </ul>
+        
+        <!-- data ed ora di partenza input data -->
+        <label for="departure-datetime">Scegliere data ed orario di partenza</label>
+        <input id="departure-datetime" type="datetime-local">
+        
+        <!-- data ed ora di ritorno (quando ritorno è selezionato)  -->
+        <label id="label-ar" for="return-datetime" style="display: none;">Scegliere data ed orario di ritorno</label>
+        <input id="return-datetime" type="datetime-local" style="display: none;">
+
+        
+        <!-- classe di viaggio input select-->
+        <label for="class">Scelta classe</label>
+        <select id="class" type="select">
+            <option value="seconda">Seocnda</option>
+            <option value="prima">Prima</option>
+            <option value="premium">Premium</option>
+            <option value="business">Business</option>
+        </select>
+
+        <!-- email  input email -->
+
+
+        <!-- telefono input number -->
+
+
+
+        <button id="submit" type="button">Invio</button>
+        <button id="reload">Annulla</button>
+
+    </form>
+    
     <div id="result" style="display: none;">
         <h2 id="user-name"></h2>
         <h2 id="user-surname"></h2>
         <p id="user-km"></p>
         <p id="user-age"></p>
+        <p id="user-travelType"></p>
+        <p id="user-departure"></p>
         <h3 id="user-cost"></h3>
+        <h3 id="user-return" style="display: none;"></h3>
     </div>
 
     <script src="./js/script.js"></script>
