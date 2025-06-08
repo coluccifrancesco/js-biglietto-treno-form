@@ -1,46 +1,53 @@
-let userKm = '';
-let userYears = '';
-
 document.getElementById('submit').addEventListener('click', function(){
     
-    userKm = document.getElementById('km').value; 
+    // L'utente inserisce età e distanza
+    let userKm = document.getElementById('km').value; 
     console.log("L'utente percorrerà: " + userKm + "km");
     
-    userYears = document.getElementById('years').value;
+    let userYears = document.getElementById('years').value;
     console.log("L'utente ha: " + userYears + " anni");
 
+    // Calcolo il costo del biglietto con tariffa standard in base all'età
     let ticketCost = costPerKmByAge(userKm, userYears).toFixed(2);
     
-    let userName = document.getElementById('name').value
-    let userSurname = document.getElementById('surname').value
-    
+    // L'utente inserisce le proprie generalità
+    let userName = document.getElementById('name').value;
+    let userSurname = document.getElementById('surname').value;
+    let userMail = document.getElementById('mail').value;
+    let userPhone = document.getElementById('phone').value;
+
+    // Calcolo il costo per qualità della classe
     let userClass = document.getElementById('class').value; 
     let costAfterClass = costByClass(ticketCost, userClass).toFixed(2);
 
+    // Calcolo il costo in base a viaggio diretto o andata e ritorno
     let userTravelType = document.querySelector('input[name="travel-type"]:checked').value; 
     let costDirectOrRound = costByReturnOrNot(userTravelType, costAfterClass).toFixed(2);
     
+    // Stampo i dati raccolti ed i risultati
     console.log("Il costo del biglietto standard è di euro: " + ticketCost);
     console.log("Il nome dell'utente è: " + userName);
     console.log("Il cognome dell'utente è: " + userSurname);
+    console.log("La mail dell'utente è: " + userMail);
+    console.log("Il numero dell'utente è: " + userPhone);
     console.log("L'utente ha scelto la classe " + userClass);
     console.log("Il costo dopo la scelta della classe è di euro: " + costAfterClass);
     console.log("Il viaggio " + userTravelType + " ha un costo complessivo di euro: " + costDirectOrRound);
 
+    // Rendo i dati ed i risultati visibili
     document.getElementById('user-name').textContent = userName;
     document.getElementById('user-surname').textContent = userSurname;
-    
-    document.getElementById('user-km').textContent = 'Distanza ' +userKm;
-    document.getElementById('user-age').textContent = 'Età ' +userYears;
+    document.getElementById('user-mail').textContent = userMail;
+    document.getElementById('user-phone').textContent = userPhone;
+    document.getElementById('user-km').textContent = 'Distanza ' + userKm;
+    document.getElementById('user-age').textContent = 'Età ' + userYears;
     document.getElementById('user-cost').textContent = 'Costo biglietto diretto: € ' + ticketCost;
-    
     document.getElementById('user-class-surplus').style.display = 'block';
     document.getElementById('user-class-surplus').textContent = "Costo per la classe " + userClass + ' è di: € ' + costAfterClass;
-    
     document.getElementById('user-return').style.display = 'block';
     document.getElementById('user-return').textContent = "Il viaggio " + userTravelType + " ha un costo complessivo di: € " + costDirectOrRound;
 
-
+    // Costo totale date tutte le variabili
     document.getElementById('result').style.display = 'block' // Risultato da mettere dopo tutti i calcoli
 
 })
