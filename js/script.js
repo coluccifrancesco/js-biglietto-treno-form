@@ -34,7 +34,7 @@ document.getElementById('submit').addEventListener('click', function(){
 
     
     // Stampo i dati raccolti ed i risultati
-    console.log("Il costo del biglietto standard è di euro: " + ticketCost.toFixed(2));
+    console.log("Il costo del biglietto standard è di euro: " + ticketCost);
     console.log("Il nome dell'utente è: " + userName);
     console.log("Il cognome dell'utente è: " + userSurname);
     console.log("La mail dell'utente è: " + userMail);
@@ -42,8 +42,8 @@ document.getElementById('submit').addEventListener('click', function(){
     console.log("L'utente partirà in data: " + userDeparture);
     console.log("L'utente tonrerà in data: " + userReturn);
     console.log("L'utente ha scelto la classe " + userClass);
-    console.log("Il costo dopo la scelta della classe è di euro: " + costAfterClass.toFixed(2));
-    console.log("Il viaggio " + userTravelType + " ha un costo complessivo di euro: " + costDirectOrRound.toFixed(2));
+    console.log("Il costo dopo la scelta della classe è di euro: " + costAfterClass);
+    console.log("Il viaggio " + userTravelType + " ha un costo complessivo di euro: " + costDirectOrRound);
 
     // Rendo i dati ed i risultati visibili
     document.getElementById('result').style.display = 'block';
@@ -53,18 +53,18 @@ document.getElementById('submit').addEventListener('click', function(){
     document.getElementById('user-phone').textContent = userPhone;
     document.getElementById('user-km').textContent = 'Distanza: ' + userKm + 'km';
     document.getElementById('user-age').textContent = 'Età: ' + userYears;
-    document.getElementById('user-cost').textContent = 'Costo del biglietto diretto: € ' + ticketCost.toFixed(2);
+    document.getElementById('user-cost').textContent = 'Costo del biglietto diretto: € ' + ticketCost;
     document.getElementById('user-departure').textContent = "Data di partenza: " + userDeparture;
     document.getElementById('user-back').style.display = 'block';
     document.getElementById('user-back').textContent = "Data di ritorno: " + userReturn;
     document.getElementById('user-class-surplus').style.display = 'block';
-    document.getElementById('user-class-surplus').textContent = "Costo per la classe " + userClass + ' è: € ' + costAfterClass.toFixed(2);
+    document.getElementById('user-class-surplus').textContent = "Costo per la classe " + userClass + ' è: € ' + costAfterClass;
     document.getElementById('user-return').style.display = 'block';
-    document.getElementById('user-return').textContent = "Il viaggio " + userTravelType + " ha un costo complessivo di: € " + costDirectOrRound.toFixed(2);
+    document.getElementById('user-return').textContent = "Il viaggio " + userTravelType + " ha un costo complessivo di: € " + costDirectOrRound;
 
 })
 
-function costPerKmByAge (km, age){
+function costPerKmByAge (km, age){  // Usare più variabili
     if (age <= 18){
         return (km * 0.21) * 0.8;
     } else if (age >= 65){
@@ -81,17 +81,14 @@ function costByClass (costo, classe){
         return costo * 1.15;
     } else if(classe === 'business'){
         return costo * 1.30;
-    } else {
-        return costo
-    }
+    } return costo
 }
 
 function costByReturnOrNot(ritorno, costo){
     if (ritorno === 'andata e ritorno'){
         return costo * 2;
-    } else {
-        return costo;
-    }
+    } 
+    return costo
 }
 
 document.getElementById('and-home').addEventListener('change', function(){
@@ -112,4 +109,4 @@ document.getElementById('direct').addEventListener('change', function(){
 // Do valore al bottone annulla 
 document.getElementById('reload').addEventListener('click', function(){  
     location.reload()
-})
+}) // in form -> reset 
