@@ -1,10 +1,10 @@
 document.getElementById('submit').addEventListener('click', function(){
     
     // L'utente inserisce età e distanza
-    let userKm = document.getElementById('km').value; 
+    let userKm = Number(document.getElementById('km').value); 
     console.log("L'utente percorrerà: " + userKm + "km");
     
-    let userYears = document.getElementById('years').value;
+    let userYears = Number(document.getElementById('years').value);
     console.log("L'utente ha: " + userYears + " anni");
 
     // Calcolo il costo del biglietto con tariffa standard in base all'età
@@ -18,11 +18,11 @@ document.getElementById('submit').addEventListener('click', function(){
 
     // Calcolo il costo per qualità della classe
     let userClass = document.getElementById('class').value; 
-    let costAfterClass = costByClass(ticketCost, userClass).toFixed(2);
+    let costAfterClass = costByClass(ticketCost, userClass);
 
     // Calcolo il costo in base a viaggio diretto o andata e ritorno
     let userTravelType = document.querySelector('input[name="travel-type"]:checked').value; 
-    let costDirectOrRound = costByReturnOrNot(userTravelType, costAfterClass).toFixed(2);
+    let costDirectOrRound = costByReturnOrNot(userTravelType, costAfterClass);
 
     // L'utente inserisce le date
     let departureInfo = document.getElementById('departure-datetime').value;
