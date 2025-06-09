@@ -51,14 +51,14 @@ document.getElementById('submit').addEventListener('click', function(){
     document.getElementById('user-surname').textContent = userSurname;
     document.getElementById('user-mail').textContent = userMail;
     document.getElementById('user-phone').textContent = userPhone;
-    document.getElementById('user-km').textContent = 'Distanza: ' + userKm;
+    document.getElementById('user-km').textContent = 'Distanza: ' + userKm + 'km';
     document.getElementById('user-age').textContent = 'Età: ' + userYears;
-    document.getElementById('user-cost').textContent = 'Costo biglietto diretto: € ' + ticketCost;
+    document.getElementById('user-cost').textContent = 'Costo del biglietto diretto: € ' + ticketCost;
     document.getElementById('user-departure').textContent = "Data di partenza: " + userDeparture;
     document.getElementById('user-back').style.display = 'block';
     document.getElementById('user-back').textContent = "Data di ritorno: " + userReturn;
     document.getElementById('user-class-surplus').style.display = 'block';
-    document.getElementById('user-class-surplus').textContent = "Costo per la classe " + userClass + ' è di: € ' + costAfterClass;
+    document.getElementById('user-class-surplus').textContent = "Costo per la classe " + userClass + ' è: € ' + costAfterClass;
     document.getElementById('user-return').style.display = 'block';
     document.getElementById('user-return').textContent = "Il viaggio " + userTravelType + " ha un costo complessivo di: € " + costDirectOrRound;
 
