@@ -62,8 +62,6 @@ document.getElementById('submit').addEventListener('click', function(){
     document.getElementById('user-return').style.display = 'block';
     document.getElementById('user-return').textContent = "Il viaggio " + userTravelType + " ha un costo complessivo di: € " + costDirectOrRound;
 
-
-
 })
 
 function costPerKmByAge (km, age){
